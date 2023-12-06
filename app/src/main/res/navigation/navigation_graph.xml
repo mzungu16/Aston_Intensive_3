@@ -7,7 +7,20 @@
 
     <fragment
         android:id="@+id/contactListFragment"
-        android:name="com.example.aston_lesson_3.ui.ContactListFragment"
+        android:name="com.example.aston_lesson_3.ui.mainFragment.ContactListFragment"
         android:label="fragment_contact_list"
-        tools:layout="@layout/fragment_contact_list" />
+        tools:layout="@layout/fragment_contact_list" >
+        <action
+            android:id="@+id/action_contactListFragment_self"
+            app:destination="@id/contactListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.example.aston_lesson_3.ui.addContactFragment.AddContact"
+        android:label="fragment_add_contact"
+        tools:layout="@layout/add_contact" />
+    <action
+        android:id="@+id/action_global_addContactFragment"
+        app:destination="@id/addContactFragment" />
 </navigation>

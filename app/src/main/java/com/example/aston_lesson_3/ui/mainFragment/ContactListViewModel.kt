@@ -1,4 +1,4 @@
-package com.example.aston_lesson_3.ui
+package com.example.aston_lesson_3.ui.mainFragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -18,6 +18,12 @@ class ContactListViewModel(private val mainUsecase: MainUsecase) : ViewModel() {
             mainUsecase.getAllContactsFromRepo().collect {
                 _contactList.postValue(it)
             }
+        }
+    }
+
+    fun addContactToRepo(contactData: ContactData) {
+        viewModelScope.launch {
+            mainUsecase.addContactToRepo(contactData)
         }
     }
 }

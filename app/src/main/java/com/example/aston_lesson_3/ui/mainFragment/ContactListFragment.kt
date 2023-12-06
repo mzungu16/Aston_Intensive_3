@@ -1,4 +1,4 @@
-package com.example.aston_lesson_3.ui
+package com.example.aston_lesson_3.ui.mainFragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

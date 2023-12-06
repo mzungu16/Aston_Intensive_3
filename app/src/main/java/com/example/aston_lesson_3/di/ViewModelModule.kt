@@ -1,6 +1,6 @@
 package com.example.aston_lesson_3.di
 
-import com.example.aston_lesson_3.ui.ContactListViewModel
+import com.example.aston_lesson_3.ui.mainFragment.ContactListViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
