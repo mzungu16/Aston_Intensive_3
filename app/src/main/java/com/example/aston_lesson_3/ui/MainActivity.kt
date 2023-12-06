@@ -62,9 +62,4 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
             }
         }
     }
-
-    private fun refreshFragment() {
-        val directions = ContactListFragmentDirections.actionContactListFragmentSelf()
-        findNavController(R.id.nav_host_fragment_container).navigate(directions)
-    }
 }
