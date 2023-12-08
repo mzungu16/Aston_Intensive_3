@@ -52,6 +52,10 @@ class DetailedCFragment : Fragment() {
                 contactViewModel.updateContact(updatedData)
                 findNavController().navigateUp()
             }
+
+            cancelBtn.setOnClickListener {
+                findNavController().navigateUp()
+            }
         }
     }
 

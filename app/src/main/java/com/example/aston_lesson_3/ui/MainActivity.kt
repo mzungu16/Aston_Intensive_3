@@ -52,13 +52,18 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
             R.id.contactListFragment -> {
                 binding.run {
                     btnAddContact.show()
-                    btnAddContact.setImageResource(R.drawable.ic_add)
                 }
             }
 
             R.id.addContactFragment -> {
                 binding.run {
                     Toast.makeText(this@MainActivity, "ADD", Toast.LENGTH_SHORT).show()
+                    btnAddContact.hide()
+                }
+            }
+
+            R.id.detailedCFragment -> {
+                binding.run {
                     btnAddContact.hide()
                 }
             }
