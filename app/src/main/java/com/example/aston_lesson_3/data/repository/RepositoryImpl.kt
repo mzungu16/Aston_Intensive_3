@@ -18,4 +18,16 @@ class RepositoryImpl(private val localDataSource: LocalDataSource) : Repository 
             localDataSource.insertToListContact(contactData)
         }
     }
+
+    override suspend fun updateContact(contactData: ContactData) {
+        CoroutineScope(Dispatchers.IO).launch {
+            localDataSource.updateContactLocal(contactData)
+        }
+    }
+
+    override suspend fun checkIndex(contactData: ContactData) {
+        CoroutineScope(Dispatchers.IO).launch {
+            localDataSource.checkIndexLocal(contactData)
+        }
+    }
 }

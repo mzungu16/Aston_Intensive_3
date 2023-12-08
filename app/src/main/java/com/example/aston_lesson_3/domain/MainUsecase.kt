@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 interface MainUsecase {
     suspend fun getAllContactsFromRepo(): Flow<List<ContactData>>
     suspend fun addContactToRepo(contactData: ContactData)
+    suspend fun updateContactRepo(contactData: ContactData)
+    suspend fun checkIndexRepo(contactData: ContactData)
 }

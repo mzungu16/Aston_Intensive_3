@@ -1,6 +1,10 @@
 package com.example.aston_lesson_3.data.localdata
 
-data class ContactData (
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class ContactData(
     val fullName: String,
-    val phoneNumber:String,
-)
+    val phoneNumber: String,
+) : Parcelable

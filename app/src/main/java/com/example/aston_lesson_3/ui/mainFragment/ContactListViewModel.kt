@@ -1,5 +1,6 @@
 package com.example.aston_lesson_3.ui.mainFragment
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,6 +25,20 @@ class ContactListViewModel(private val mainUsecase: MainUsecase) : ViewModel() {
     fun addContactToRepo(contactData: ContactData) {
         viewModelScope.launch {
             mainUsecase.addContactToRepo(contactData)
+        }
+    }
+
+    fun checkIndex(contactData: ContactData){
+        viewModelScope.launch {
+            Log.d("CONTACT","C VM - $contactData")
+            mainUsecase.checkIndexRepo(contactData)
+        }
+    }
+
+    fun updateContact(contactData: ContactData){
+        viewModelScope.launch {
+            Log.d("CONTACT","UPDATE VM - $contactData")
+            mainUsecase.updateContactRepo(contactData)
         }
     }
 }

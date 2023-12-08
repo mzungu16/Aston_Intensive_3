@@ -44,7 +44,6 @@ class AddContact : Fragment() {
                     phoneNumberTxt.text.toString()
                 )
             )
-            contactViewModel.getContactsListFromUsecase()
             findNavController().navigateUp()
         }
     }

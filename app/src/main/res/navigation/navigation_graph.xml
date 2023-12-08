@@ -20,4 +20,9 @@
     <action
         android:id="@+id/action_global_addContactFragment"
         app:destination="@id/addContactFragment" />
+    <fragment
+        android:id="@+id/detailedCFragment"
+        android:name="com.example.aston_lesson_3.ui.detailedContactFragment.DetailedCFragment"
+        android:label="DetailedCFragment"
+        tools:layout="@layout/fragment_detailed_c"/>
 </navigation>

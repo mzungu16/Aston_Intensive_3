@@ -7,4 +7,6 @@ interface Repository {
     suspend fun getContacts(): Flow<List<ContactData>>
 
     suspend fun addContact(contactData: ContactData)
+    suspend fun updateContact(contactData: ContactData)
+    suspend fun checkIndex(contactData: ContactData)
 }

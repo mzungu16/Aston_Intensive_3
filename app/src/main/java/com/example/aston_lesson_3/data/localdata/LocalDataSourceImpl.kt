@@ -5,6 +5,7 @@ import com.example.aston_lesson_3.domain.LocalDataSource
 
 class LocalDataSourceImpl : LocalDataSource {
     private val dataMutableList = mutableListOf<ContactData>()
+    private var indexedValue = 0
 
     override fun getContactList(): List<ContactData> {
         for (i in 0..100) {
@@ -15,7 +16,14 @@ class LocalDataSourceImpl : LocalDataSource {
 
     override fun insertToListContact(contactData: ContactData) {
         dataMutableList.add(0,contactData)
-        Log.d("LIST","${dataMutableList.first()}")
+    }
+
+    override fun updateContactLocal(contactData: ContactData) {
+        dataMutableList[indexedValue] = contactData
+    }
+
+    override fun checkIndexLocal(contactData: ContactData) {
+        indexedValue = dataMutableList.indexOf(contactData)
     }
 
 }

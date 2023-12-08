@@ -5,13 +5,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
+import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import com.example.aston_lesson_3.R
 import com.example.aston_lesson_3.databinding.ActivityMainBinding
+import com.example.aston_lesson_3.domain.NavigationInt
 import com.example.aston_lesson_3.ui.addContactFragment.AddContactDirections
-import com.example.aston_lesson_3.ui.mainFragment.ContactListFragmentDirections
 
-class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener {
+class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener,
+    NavigationInt {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,5 +63,17 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
                 }
             }
         }
+    }
+
+    override fun openDetailedFragment(bundle: Bundle) {
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.detailedCFragment, false)
+            .setLaunchSingleTop(true)
+            .build()
+        findNavController(R.id.nav_host_fragment_container).navigate(
+            R.id.detailedCFragment,
+            bundle,
+            navOptions
+        )
     }
 }
